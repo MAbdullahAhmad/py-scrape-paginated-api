@@ -1,20 +1,22 @@
 # Imports
 
-from lib.curl_to_req import curl_json
-from lib.html_2_dict import decode_directory
 from pathlib import Path
 from sys import exit
+from datetime import datetime
 
+from lib.curl_to_req import curl_json
+from lib.html_2_dict import decode_directory
+from lib.save_as_sheet import save_excel
 
 # Settings
 
 verbose = True
-
+file_dir = Path(__file__).parent
 
 # Read cRUL String
 
 try:
-    file_path = Path.joinpath(Path(__file__).parent, 'data/curl_string.txt')
+    file_path = Path.joinpath(file_dir, 'data/curl_string.txt')
     curl_string = open(file_path, 'r').read()
 
     if 'page=1' not in curl_string:
@@ -46,7 +48,7 @@ print("Total Pages =", total_pages)
 
 scraped_directory = []
 
-for i in range(5):
+for i in range(total_pages):
     if verbose: print("[INFO]: Scraping Page #"+str(i+1))
 
     response = curl_json(curl_string)
@@ -54,16 +56,21 @@ for i in range(5):
 
     scraped_directory += decode_directory(html_directory)
 
+if verbose: print("[INFO]: Scraped Successfully. Exporting ...")
 
-# Print results
 
-print(scraped_directory)
+# Export
 
-# print()
 
-# response = curl_json(curl_string)
+try:
+    filename = f"export_{datetime.now().strftime('%Y_%m_%d__%H_%M_%S_%f')}.xlsx"
+    file_path = Path.joinpath(file_dir, 'output', filename)
+    save_excel(scraped_directory, file_path)
 
-# html_directory = response['resultsHtml']
-# directory = decode_directory(html_directory)
+    if verbose: print("[INFO]: Exported Successfully to file output/"+str(filename))
+except:
+    if verbose: print("[ERR]: Export failed!")
+    exit(1)
 
-# print(directory)
+
+print("Completed")
