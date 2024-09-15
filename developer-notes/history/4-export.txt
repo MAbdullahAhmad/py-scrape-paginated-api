@@ -1,0 +1,42 @@
+[
+  {
+    name: "Bernard P Wolfsdorf",
+    profile_url: "https://www.eb5investors.com/directories/immigration-attorneys/bernard-wolfsorf/",
+    location: "Santa Monica, California",
+    answers: "3218 Answers",
+    badge: "★ Top Contributor",
+    image_src: "https://www.eb5investors.com/resources/images/profiles/60be21f3ebf28ff7b8a692a752d92cf8.jpg",
+  },
+  {
+    name: "Bernard P Wolfsdorf",
+    profile_url: "https://www.eb5investors.com/directories/immigration-attorneys/bernard-wolfsorf/",
+    location: "Santa Monica, California",
+    answers: "3218 Answers",
+    badge: "★ Top Contributor",
+    image_src: "https://www.eb5investors.com/resources/images/profiles/60be21f3ebf28ff7b8a692a752d92cf8.jpg",
+  },
+  {
+    name: "Bernard P Wolfsdorf",
+    profile_url: "https://www.eb5investors.com/directories/immigration-attorneys/bernard-wolfsorf/",
+    location: "Santa Monica, California",
+    answers: "3218 Answers",
+    badge: "★ Top Contributor",
+    image_src: "https://www.eb5investors.com/resources/images/profiles/60be21f3ebf28ff7b8a692a752d92cf8.jpg",
+  },
+  {
+    name: "Bernard P Wolfsdorf",
+    profile_url: "https://www.eb5investors.com/directories/immigration-attorneys/bernard-wolfsorf/",
+    location: "Santa Monica, California",
+    answers: "3218 Answers",
+    badge: "★ Top Contributor",
+    image_src: "https://www.eb5investors.com/resources/images/profiles/60be21f3ebf28ff7b8a692a752d92cf8.jpg",
+  },
+  {
+    name: "Bernard P Wolfsdorf",
+    profile_url: "https://www.eb5investors.com/directories/immigration-attorneys/bernard-wolfsorf/",
+    location: "Santa Monica, California",
+    answers: "3218 Answers",
+    badge: "★ Top Contributor",
+    image_src: "https://www.eb5investors.com/resources/images/profiles/60be21f3ebf28ff7b8a692a752d92cf8.jpg",
+  },
+];
