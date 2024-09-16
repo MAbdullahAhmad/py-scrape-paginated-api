@@ -39,6 +39,14 @@ def curl_req(curl_command):
     
     return requests.post(req['url'], headers=req['headers'], data=req['data'])
 
+
+def curl_decoded_req(req):
+    if req['method'] == 'get':
+        return requests.get(req['url'], headers=req['headers'])
+    
+    return requests.post(req['url'], headers=req['headers'], data=req['data'])
+
+
 def curl_res(curl_command):
     response = curl_req(curl_command)
     if response.status_code == 200:

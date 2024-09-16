@@ -1,9 +1,12 @@
 import pandas as pd
 
-def save_csv(data, filename):
+def get_df(data):
     df = pd.DataFrame(data)
-    df.to_csv(filename, index=False)
+    df.index = df.index + 1
+    return df
+
+def save_csv(data, filename):
+    get_df(data).to_csv(filename, index=True, index_label="#")
 
 def save_excel(data, filename):
-    df = pd.DataFrame(data)
-    df.to_excel(filename, index=False)
+    get_df(data).to_excel(filename, index=True, index_label="#")
