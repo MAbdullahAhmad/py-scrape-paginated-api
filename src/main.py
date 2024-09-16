@@ -81,11 +81,15 @@ total_lawyers = len(scraped_directory)
 for i in range(total_lawyers):
     if verbose: print("[INFO]: Detail Scrape #"+str(i+1) + " of " + str(total_lawyers))
 
+    if 'proile_url' not in directory:
+        if verbose: print("[INFO]: SKIP --- Profile URL 404")
+        continue
+
     directory = scraped_directory[i]
     decoded_profile_req['url'] = directory['profile_url']
 
     res = curl_decoded_req(decoded_profile_req)
-    info = decode_info(res.text)
+    info = decode_info(res.text, verbose)
 
     for k in info.keys():
         scraped_directory[i][k] = info[k]
