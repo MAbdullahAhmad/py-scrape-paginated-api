@@ -51,9 +51,9 @@ scraped_directory = []
 
 for p in range(1, total_pages):
     if verbose: print("[INFO]: Scraping Page #"+str(p))
-    curl_string = set_page(curl_string, p)
+    current_curl = set_page(curl_string, p)
 
-    response = curl_json(curl_string)
+    response = curl_json(current_curl)
     html_directory = response['resultsHtml']
     directory = decode_directory(html_directory)
 
